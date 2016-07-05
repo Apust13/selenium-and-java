@@ -15,7 +15,7 @@ public class HomePageTest extends TestBase {
 	public void testInit(String path) {
 
 		// Load the page in the browser
-		webDriver.get(websiteUrl + path);
+		webDriver.get(baseUrl + path);
 		homepage = PageFactory.initElements(webDriver, HomePage.class);
 	}
 

@@ -33,13 +33,13 @@ public class TestBase {
 
 	protected String gridHubUrl;
 
-	protected String websiteUrl;
+	protected String baseUrl;
 
 	protected Browser browser;
 
 	@BeforeClass
 	public void init() {
-		websiteUrl = PropertyLoader.loadProperty("site.url");
+		baseUrl = PropertyLoader.loadProperty("site.url");
 		gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
 
 		browser = new Browser();
@@ -47,8 +47,8 @@ public class TestBase {
 		browser.setVersion(PropertyLoader.loadProperty("browser.version"));
 		browser.setPlatform(PropertyLoader.loadProperty("browser.platform"));
 
-		String username = PropertyLoader.loadProperty("user.username");
-		String password = PropertyLoader.loadProperty("user.password");
+		String username = "";
+		String password = "";
 		
 		webDriver = WebDriverFactory.getInstance(gridHubUrl, browser, username,
 				password);
