@@ -78,7 +78,9 @@ public class WebDriverFactory {
 		} else if (FIREFOX.equals(browserName)) {
 			capability = DesiredCapabilities.firefox();
 			
-			FirefoxProfile ffProfile = new FirefoxProfile();
+			final FirefoxProfile ffProfile = new FirefoxProfile();
+			ffProfile.setEnableNativeEvents(false);
+			
 
 			// Authenication Hack for Firefox
 			if (username != null && password != null) {
